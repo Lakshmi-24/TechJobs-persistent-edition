@@ -21,7 +21,8 @@ import java.util.Optional;
  * Created by LaunchCode
  */
 @Controller
-public class HomeController {
+public class
+HomeController {
 
     @Autowired
     private EmployerRepository employerRepository;
@@ -36,6 +37,7 @@ public class HomeController {
     public String index(Model model) {
 
         model.addAttribute("title", "My Jobs");
+        model.addAttribute("jobs",jobRepository.findAll());
 
         return "index";
     }
